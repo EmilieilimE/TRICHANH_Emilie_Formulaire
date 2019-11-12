@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulaire</title>
+    <link rel="stylesheet" type="text/css" href="formulaire.css"_media="screen"/>
+</head>
+
+<body>
+
+<div id="page1"> 
+    <div class="head">
+        <div class="case">
+        </div>
+        <div class="case">
+        </div>
+        <div class="case">
+        </div>
+    </div>
+
+    <div class="section">
+        <p class="titre">Entrez votre pseudo</p>
+        <p class="consigne">Votre pseudo doit faire entre 7 et 50 caractères.</p>
+    </div>
+
+    <div class="champ">
+    <input type="text" id="pseudo" placeholder="Entrez votre pseudo" oninput="caracteres()">
+    </br>
+    <span id="msg"></span>
+    </br>
+    <button id="valider" onclick="valider()">Valider</button>
+    </div>
+</div>
+
+
+<div id="page2">
+    <div class="head">
+        <div class="case">
+        </div>
+
+        <div class="case">
+        </div>
+
+        <div class="case">
+        </div>
+    </div>
+
+    <div class="section">
+        <p class="titre">Entrez votre ...</p>
+        <p class="consigne">à suivre ...</p>
+    </div>
+</div>
+
+
+<!--Javascript-->
+<script type="text/javascript">
+     
+    function caracteres () {
+        var nbcarac = document.getElementById('pseudo').value.length;
+        console.error(nbcarac);
+        
+        if (nbcarac < 7) {
+            document.getElementById('msg').style.color = '#8E1A01';
+            document.getElementById('msg').innerHTML = nbcarac+"/50 caractères";
+        }
+
+        else {
+            document.getElementById('msg').style.color = 'green';
+            document.getElementById('msg').innerHTML = nbcarac+"/50 caractères";
+          }
+        
+    }
+
+    function valider() {
+    var nbcarac = document.getElementById('pseudo').value.length;
+
+    if (nbcarac > 7){
+        document.body.style.left = '-100%';
+    }
+
+    else {
+        document.getElementById('msg').innerHTML = "Le pseudo n'est pas en règle";
+
+    }
+
+}
+
+
+
+</script>
+    
+</body>
+</html>
